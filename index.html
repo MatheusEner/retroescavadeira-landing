@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Retroescavadeira Case 580M | Sete Lagoas e Região</title>
+  <meta name="description" content="Serviços com Retroescavadeira Case 580M em Sete Lagoas e região. Abertura e limpeza de valas, terraplanagem, escavações, carregamento e mais. Orçamento rápido no WhatsApp." />
+
+  <style>
+    :root{
+      --bg:#07121e;
+      --card:#0b1b2b;
+      --muted:#b8c7d8;
+      --text:#eaf2ff;
+      --accent:#f6a21a;
+      --accent2:#19c37d;
+      --stroke:rgba(255,255,255,.08);
+      --shadow: 0 18px 55px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;background:radial-gradient(1200px 800px at 80% -10%, rgba(246,162,26,.22), transparent 55%), radial-gradient(900px 700px at 0% 10%, rgba(25,195,125,.18), transparent 55%), var(--bg); color:var(--text);}
+    a{color:inherit}
+    .container{width:min(1120px, 92vw); margin:0 auto;}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(7,18,30,.7);
+      border-bottom:1px solid var(--stroke);
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
+    .brand{display:flex; gap:12px; align-items:center; text-decoration:none;}
+    .logo{
+      width:42px; height:42px; border-radius:12px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(246,162,26,.22), rgba(25,195,125,.18));
+      border:1px solid var(--stroke);
+    }
+    .brand strong{display:block; font-size:14px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+    .nav-links{display:flex; gap:18px; align-items:center;}
+    .nav-links a{font-size:13px; text-decoration:none; color:var(--muted);}
+    .nav-links a:hover{color:var(--text)}
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border-radius:999px;
+      background: linear-gradient(135deg, rgba(25,195,125,.25), rgba(25,195,125,.08));
+      border:1px solid rgba(25,195,125,.35);
+      text-decoration:none; font-weight:600; font-size:13px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      white-space:nowrap;
+    }
+    .cta:hover{transform: translateY(-1px);}
+    .hero{padding:34px 0 18px;}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .h1{
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.05;
+      margin: 0 0 14px 0;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.5;
+      margin:0 0 18px 0;
+    }
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 18px;}
+    .badge{
+      font-size:12px; color:var(--text);
+      padding:8px 12px; border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--stroke);
+    }
+    .badge b{color:var(--accent)}
+    .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:8px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px;
+      border:1px solid var(--stroke);
+      text-decoration:none; font-weight:700;
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(246,162,26,.95), rgba(246,162,26,.70));
+      color:#1a1103;
+      border:1px solid rgba(246,162,26,.65);
+    }
+    .btn:hover{transform: translateY(-1px);}
+    .card{
+      background: rgba(11,27,43,.8);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .banner{
+      position:relative;
+      min-height: 330px;
+      display:flex;
+      flex-direction:column;
+    }
+    .banner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .banner .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(7,18,30,.10), rgba(7,18,30,.55));
+    }
+    .banner .corner{
+      position:absolute; left:14px; bottom:14px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .chip{
+      padding:8px 10px; border-radius:999px;
+      background: rgba(7,18,30,.65);
+      border:1px solid var(--stroke);
+      font-size:12px; color:var(--muted);
+      backdrop-filter: blur(10px);
+    }
+    section{padding: 26px 0;}
+    .section-title{
+      font-size: 20px;
+      margin:0 0 12px 0;
+      letter-spacing:-.2px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .feature{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      min-height: 128px;
+    }
+    .feature h3{margin:0 0 8px 0; font-size:14px}
+    .feature p{margin:0; color:var(--muted); font-size:13px; line-height:1.45}
+    .list{
+      display:grid; gap:10px;
+      padding:16px;
+    }
+    .item{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      border-radius:14px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;margin-top:5px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(246,162,26,.18);
+      flex:0 0 auto;
+    }
+    .item b{display:block; font-size:13px}
+    .item span{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+    .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
+    .pricing{
+      padding:16px;
+    }
+    .pricing .row{display:flex; justify-content:space-between; gap:10px; padding:10px 0; border-bottom:1px solid var(--stroke);}
+    .pricing .row:last-child{border-bottom:0}
+    .pricing .label{color:var(--muted); font-size:13px}
+    .pricing .value{font-weight:800}
+    .note{color:var(--muted); font-size:12px; margin-top:10px; line-height:1.4}
+    .faq{padding:16px}
+    details{
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      border-radius:14px;
+      padding:12px 12px;
+    }
+    details + details{margin-top:10px}
+    summary{cursor:pointer; font-weight:700; font-size:13px}
+    details p{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.45}
+    .footer{
+      padding:22px 0 34px;
+      border-top:1px solid var(--stroke);
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .whatsapp-float{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 1000;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(25,195,125,.95), rgba(25,195,125,.70));
+      color: #062013;
+      text-decoration:none;
+      font-weight:900;
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+    }
+    .wa-pill{
+      background: rgba(255,255,255,.55);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+    }
+
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .grid-3{grid-template-columns: 1fr;}
+      .two-col{grid-template-columns: 1fr;}
+      .nav-links{display:none;}
+      .banner{min-height: 260px;}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- CONFIG RÁPIDA -->
+  <script>
+    // Ajuste aqui se quiser:
+    window.SERVICE = {
+      city: "Sete Lagoas e região",
+      machine: "Retroescavadeira Case 580M",
+      phone: "5531995861562", // formato internacional sem + e sem espaços
+      phonePretty: "(31) 99586-1562",
+      bannerSrc: "banner.png"
+    };
+  </script>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#topo" aria-label="Ir para o topo">
+        <div class="logo">🛠️</div>
+        <div>
+          <strong id="brandMachine">Retroescavadeira</strong>
+          <span id="brandCity">Sete Lagoas e Região</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#contratacao">Contratação</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+
+      <a class="cta" id="topWhats" href="#" target="_blank" rel="noopener">
+        <span>💬 Orçamento no WhatsApp</span>
+        <span style="color:var(--accent)">→</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="topo" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1 class="h1" id="heroTitle">Retroescavadeira Case 580M em Sete Lagoas e região</h1>
+          <p class="sub">
+            Serviço com operador experiente, atendimento rápido e máquina revisada.
+            Ideal para obras, lotes, sítios e serviços rurais.
+          </p>
+
+          <div class="badges">
+            <div class="badge">✅ <b>Orçamento rápido</b> pelo WhatsApp</div>
+            <div class="badge">📍 Atendemos <b>Sete Lagoas</b> e região</div>
+            <div class="badge">⚙️ Máquina <b>revisada</b></div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" id="heroWhats" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+            <a class="btn" href="#servicos">Ver serviços</a>
+            <a class="btn" href="#contratacao">Como contratar</a>
+          </div>
+        </div>
+
+        <div class="card banner" aria-label="Banner do serviço">
+          <img id="bannerImg" src="banner.png" alt="Retroescavadeira Case 580M - Sete Lagoas e região" />
+          <div class="overlay"></div>
+          <div class="corner">
+            <div class="chip">⏱️ Serviço por hora</div>
+            <div class="chip">📅 Serviço por diária</div>
+            <div class="chip">📲 WhatsApp: <span id="chipPhone"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <h2 class="section-title">Serviços</h2>
+
+      <div class="two-col">
+        <div class="card list">
+          <div class="item">
+            <div class="dot"></div>
+            <div>
+              <b>Abertura e limpeza de valas</b>
+              <span>Para redes, drenagem, passagens e manutenção.</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="dot"></div>
+            <div>
+              <b>Terraplanagem e nivelamento</b>
+              <span>Base para obra, pátios, acessos e correções de terreno.</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="dot"></div>
+            <div>
+              <b>Limpeza de lotes e terrenos</b>
+              <span>Remoção de entulho, barro, resíduos e regularização.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card list">
+          <div class="item">
+            <div class="dot"></div>
+            <div>
+              <b>Escavação para fossa, cisterna e fundação</b>
+              <span>Escavações com precisão e agilidade.</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="dot"></div>
+            <div>
+              <b>Barraginhas, açudes e serviços rurais</b>
+              <span>Trabalho em áreas rurais e propriedades.</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="dot"></div>
+            <div>
+              <b>Carregamento e movimentação de material</b>
+              <span>Areia, brita, terra e materiais diversos.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais">
+      <h2 class="section-title">Diferenciais</h2>
+
+      <div class="grid-3">
+        <div class="feature">
+          <h3>👷 Operador experiente</h3>
+          <p>Execução segura, com cuidado no acabamento e no entorno.</p>
+        </div>
+        <div class="feature">
+          <h3>⚡ Atendimento rápido</h3>
+          <p>Resposta rápida no WhatsApp e agendamento direto.</p>
+        </div>
+        <div class="feature">
+          <h3>🔧 Máquina revisada</h3>
+          <p>Equipamento revisado para reduzir paradas e garantir eficiência.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contratacao">
+      <h2 class="section-title">Formas de contratação</h2>
+
+      <div class="two-col">
+        <div class="card pricing">
+          <div class="row">
+            <div class="label">⏱️ Serviço por hora</div>
+            <div class="value">Sob consulta</div>
+          </div>
+          <div class="row">
+            <div class="label">📅 Serviço por diária</div>
+            <div class="value">Sob consulta</div>
+          </div>
+          <p class="note">
+            Os valores variam conforme tipo de serviço, deslocamento, tempo estimado e condições do terreno.
+            Chame no WhatsApp e envie: <b>local + serviço + fotos/vídeo</b>.
+          </p>
+
+          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn primary" id="pricingWhats" href="#" target="_blank" rel="noopener">Pedir orçamento agora</a>
+            <a class="btn" href="#faq">Tirar dúvidas</a>
+          </div>
+        </div>
+
+        <div class="card faq">
+          <h3 style="margin:0 0 10px 0; font-size:14px;">✅ O que agiliza seu orçamento</h3>
+          <div class="item" style="margin:0 0 10px 0;">
+            <div class="dot"></div>
+            <div>
+              <b>Local do serviço</b>
+              <span>Bairro/cidade e se tem acesso fácil para máquina.</span>
+            </div>
+          </div>
+          <div class="item" style="margin:0 0 10px 0;">
+            <div class="dot"></div>
+            <div>
+              <b>Tipo de serviço</b>
+              <span>Ex.: vala, terraplanagem, escavação, limpeza, carregamento.</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="dot"></div>
+            <div>
+              <b>Fotos ou vídeo do local</b>
+              <span>Ajuda a estimar tempo, obstáculos e condições do terreno.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2 class="section-title">Dúvidas frequentes</h2>
+
+      <div class="two-col">
+        <div class="card faq">
+          <details>
+            <summary>Vocês atendem só Sete Lagoas?</summary>
+            <p>Atendemos Sete Lagoas e região. Se você estiver em outra cidade próxima, chame no WhatsApp e informe o local.</p>
+          </details>
+          <details>
+            <summary>Como funciona o agendamento?</summary>
+            <p>Você envia o local e o tipo de serviço. Confirmamos disponibilidade e alinhamos horário/diária conforme necessidade.</p>
+          </details>
+          <details>
+            <summary>Precisa de vistoria antes?</summary>
+            <p>Na maioria dos casos, fotos/vídeo já resolvem. Para serviços maiores, podemos avaliar conforme o caso.</p>
+          </details>
+        </div>
+
+        <div class="card faq">
+          <details>
+            <summary>O que pode mudar o valor do serviço?</summary>
+            <p>Distância/deslocamento, tempo estimado, tipo de solo, acessos, presença de obstáculos e necessidade de acabamento.</p>
+          </details>
+          <details>
+            <summary>Você faz limpeza e movimentação de material?</summary>
+            <p>Sim: carregamento e movimentação de material, além de limpeza de lotes e terrenos.</p>
+          </details>
+          <details>
+            <summary>Qual a forma mais rápida de pedir orçamento?</summary>
+            <p>WhatsApp. Envie: <b>local + serviço + fotos/vídeo</b>. A resposta é rápida.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="container" style="width:100%; padding:0;">
+        <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div>
+            <b style="color:var(--text)" id="footMachine">Retroescavadeira Case 580M</b><br/>
+            <span id="footCity">Sete Lagoas e região</span>
+          </div>
+          <div>
+            <span>WhatsApp:</span>
+            <b style="color:var(--text)" id="footPhone">(31) 99586-1562</b>
+          </div>
+        </div>
+        <div style="margin-top:10px;">
+          <span>© <span id="year"></span> — Serviços com retroescavadeira. Todos os direitos reservados.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+    <span class="wa-pill">WhatsApp</span>
+    <span id="floatPhone">(31) 99586-1562</span>
+    <span aria-hidden="true">💬</span>
+  </a>
+
+  <script>
+    const cfg = window.SERVICE;
+
+    // Textos
+    document.getElementById("brandMachine").textContent = cfg.machine;
+    document.getElementById("brandCity").textContent = cfg.city;
+    document.getElementById("heroTitle").textContent = `${cfg.machine} em ${cfg.city}`;
+    document.getElementById("chipPhone").textContent = cfg.phonePretty;
+    document.getElementById("footMachine").textContent = cfg.machine;
+    document.getElementById("footCity").textContent = cfg.city;
+    document.getElementById("footPhone").textContent = cfg.phonePretty;
+    document.getElementById("floatPhone").textContent = cfg.phonePretty;
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Banner
+    const banner = document.getElementById("bannerImg");
+    banner.src = cfg.bannerSrc;
+
+    // Link WhatsApp com mensagem pronta
+    const msg = encodeURIComponent(
+      `Olá! Gostaria de um orçamento para serviço com ${cfg.machine}.\n\n` +
+      `📍 Local: \n` +
+      `🛠️ Serviço: \n` +
+      `📅 Data/urgência: \n` +
+      `📷 Vou enviar fotos/vídeo do local.`
+    );
+    const waLink = `https://wa.me/${cfg.phone}?text=${msg}`;
+
+    ["topWhats","heroWhats","pricingWhats","floatWhats"].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = waLink;
+    });
+  </script>
+</body>
+</html>
