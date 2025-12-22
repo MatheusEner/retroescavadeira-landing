@@ -231,12 +231,14 @@
   <script>
     // Ajuste aqui se quiser:
     window.SERVICE = {
-      city: "Sete Lagoas e região",
-      machine: "Retroescavadeira Case 580M",
-      phone: "5531995861562", // formato internacional sem + e sem espaços
-      phonePretty: "(31) 99586-1562",
-      bannerSrc: "banner.png"
-    };
+  brand: "DDM Locações",
+  city: "Sete Lagoas e região",
+  machine: "Retroescavadeira Case 580M",
+  phone: "5531995861562",
+  phonePretty: "(31) 99586-1562",
+  bannerSrc: "banner2.png"
+};
+
   </script>
 
   <header class="nav">
@@ -287,15 +289,8 @@
         </div>
 
         <div class="card banner" aria-label="Banner do serviço">
-          <img id="bannerImg" src="banner.png" alt="Retroescavadeira Case 580M - Sete Lagoas e região" />
-          <div class="overlay"></div>
-          <div class="corner">
-            <div class="chip">⏱️ Serviço por hora</div>
-            <div class="chip">📅 Serviço por diária</div>
-            <div class="chip">📲 WhatsApp: <span id="chipPhone"></span></div>
-          </div>
-        </div>
-      </div>
+          <img id="bannerImg" src="banner2.png" alt="Retroescavadeira Case 580M - Sete Lagoas e região" />
+         
     </section>
 
     <section id="servicos">
@@ -462,7 +457,7 @@
       <div class="container" style="width:100%; padding:0;">
         <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
           <div>
-            <b style="color:var(--text)" id="footMachine">Retroescavadeira Case 580M</b><br/>
+            <b style="color:var(--text)" id="footMachine">DDM Locações</b><br/>
             <span id="footCity">Sete Lagoas e região</span>
           </div>
           <div>
@@ -487,8 +482,8 @@
     const cfg = window.SERVICE;
 
     // Textos
-    document.getElementById("brandMachine").textContent = cfg.machine;
-    document.getElementById("brandCity").textContent = cfg.city;
+    document.getElementById("brandMachine").textContent = cfg.brand;
+document.getElementById("brandCity").textContent = cfg.city;
     document.getElementById("heroTitle").textContent = `${cfg.machine} em ${cfg.city}`;
     document.getElementById("chipPhone").textContent = cfg.phonePretty;
     document.getElementById("footMachine").textContent = cfg.machine;
