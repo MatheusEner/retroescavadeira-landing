@@ -364,7 +364,7 @@
         <a href="#faq">Dúvidas</a>
       </nav>
 
-      <a class="cta" id="topWhats" href="#" target="_blank" rel="noopener">
+      <a class="cta" id="topWhats" data-whatsapp="1" href="#" target="_blank" rel="noopener">
         <span>💬 Orçamento no WhatsApp</span>
         <span style="color:var(--accent)">→</span>
       </a>
@@ -387,7 +387,7 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn primary" id="heroWhats" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+            <a class="btn primary" id="heroWhats" data-whatsapp="1" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
             <a class="btn" href="#servicos">Ver serviços</a>
             <a class="btn" href="#contratacao">Como contratar</a>
           </div>
@@ -482,7 +482,7 @@
           </p>
 
           <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn primary" id="pricingWhats" href="#" target="_blank" rel="noopener">Pedir orçamento agora</a>
+            <a class="btn primary" id="pricingWhats" data-whatsapp="1" href="#" target="_blank" rel="noopener">Pedir orçamento agora</a>
             <a class="btn" href="#faq">Tirar dúvidas</a>
           </div>
         </div>
@@ -559,7 +559,7 @@
           </div>
           <div>
             <span>WhatsApp:</span>
-            <b style="color:var(--text)" id="footPhone">(31) 97106-9292</b>
+            <b style="color:var(--text)" id="footPhone">(31) 97106-7272</b>
           </div>
         </div>
         <div style="margin-top:10px;">
@@ -569,7 +569,7 @@
     </section>
   </main>
 
-  <a class="whatsapp-float" id="floatWhats" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <a class="whatsapp-float" id="floatWhats" data-whatsapp="1" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
     <span class="wa-pill">WhatsApp</span>
     <span id="floatPhone">(31) 97106-7272</span>
     <span aria-hidden="true">💬</span>
@@ -728,6 +728,47 @@
     }
 
     renderShortsCarousel();
+
+
+   // GA4: rastrear clique no WhatsApp (garante envio antes de abrir)
+["topWhats","heroWhats","pricingWhats","floatWhats"].forEach((id) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  el.addEventListener("click", (e) => {
+    // impede abrir antes de registrar o evento
+    e.preventDefault();
+
+    const href = el.href;
+    const open = () => window.open(href, "_blank", "noopener");
+
+    if (typeof gtag === "function") {
+      let opened = false;
+
+      gtag("event", "whatsapp_click", {
+        event_category: "lead",
+        event_label: id,
+        event_callback: () => {
+          if (opened) return;
+          opened = true;
+          open();
+        }
+      });
+
+      // fallback se o callback não rodar (ex.: bloqueios)
+      setTimeout(() => {
+        if (opened) return;
+        opened = true;
+        open();
+      }, 600);
+    } else {
+      // se GA não carregou por algum motivo, abre normal
+      open();
+    }
+  });
+});
+
+
   </script>
 </body>
 </html>
