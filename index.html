@@ -19,7 +19,15 @@
       --radius: 18px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;background:radial-gradient(1200px 800px at 80% -10%, rgba(246,162,26,.22), transparent 55%), radial-gradient(900px 700px at 0% 10%, rgba(25,195,125,.18), transparent 55%), var(--bg); color:var(--text);}
+    html,body{
+      margin:0;padding:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(246,162,26,.22), transparent 55%),
+        radial-gradient(900px 700px at 0% 10%, rgba(25,195,125,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+    }
     a{color:inherit}
     .container{width:min(1120px, 92vw); margin:0 auto;}
     .nav{
@@ -167,9 +175,7 @@
     .item b{display:block; font-size:13px}
     .item span{display:block; color:var(--muted); font-size:12px; margin-top:2px}
     .two-col{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
-    .pricing{
-      padding:16px;
-    }
+    .pricing{padding:16px;}
     .pricing .row{display:flex; justify-content:space-between; gap:10px; padding:10px 0; border-bottom:1px solid var(--stroke);}
     .pricing .row:last-child{border-bottom:0}
     .pricing .label{color:var(--muted); font-size:13px}
@@ -216,12 +222,99 @@
       font-weight:900;
     }
 
+    /* ===== Shorts Carousel (cards grandes + setas) ===== */
+    .shorts-wrap{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    .short-card{
+      position:relative;
+      padding:14px;
+    }
+    .short-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .short-title{
+      margin:0;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .short-sub{
+      margin:6px 0 0 0;
+      color: var(--muted);
+      font-size:12px;
+      line-height:1.4;
+    }
+    .short-frame{
+      position:relative;
+      width:100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid var(--stroke);
+      background: rgba(0,0,0,.25);
+      box-shadow: var(--shadow);
+    }
+    .short-frame iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+    }
+    .short-nav{
+      position:absolute;
+      inset: 0;
+      pointer-events:none;
+    }
+    .short-btn{
+      pointer-events:auto;
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width:44px;
+      height:44px;
+      border-radius: 999px;
+      border:1px solid var(--stroke);
+      background: rgba(7,18,30,.65);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    .short-btn:hover{ transform: translateY(-50%) scale(1.03); }
+    .short-btn.prev{ left:10px; }
+    .short-btn.next{ right:10px; }
+    .short-counter{
+      position:absolute;
+      left:50%;
+      bottom:10px;
+      transform: translateX(-50%);
+      padding:6px 10px;
+      border-radius: 999px;
+      font-size:12px;
+      color: var(--muted);
+      background: rgba(7,18,30,.62);
+      border:1px solid var(--stroke);
+      backdrop-filter: blur(10px);
+    }
+    .short-hidden{ display:none !important; }
+
     @media (max-width: 920px){
       .hero-grid{grid-template-columns: 1fr;}
       .grid-3{grid-template-columns: 1fr;}
       .two-col{grid-template-columns: 1fr;}
       .nav-links{display:none;}
       .banner{min-height: 260px;}
+      .shorts-wrap{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -229,16 +322,14 @@
 <body>
   <!-- CONFIG RÁPIDA -->
   <script>
-    // Ajuste aqui se quiser:
     window.SERVICE = {
-  brand: "DDM Locações",
-  city: "Sete Lagoas e região",
-  machine: "Retroescavadeira Case 580M",
-  phone: "5531995861562",
-  phonePretty: "(31) 99586-1562",
-  bannerSrc: "banner2.png"
-};
-
+      brand: "DDM Locações",
+      city: "Sete Lagoas e região",
+      machine: "Retroescavadeira Case 580M",
+      phone: "5531995861562",
+      phonePretty: "(31) 99586-1562",
+      bannerSrc: "banner2.png"
+    };
   </script>
 
   <header class="nav">
@@ -253,6 +344,7 @@
 
       <nav class="nav-links">
         <a href="#servicos">Serviços</a>
+        <a href="#shorts">Vídeos</a>
         <a href="#diferenciais">Diferenciais</a>
         <a href="#contratacao">Contratação</a>
         <a href="#faq">Dúvidas</a>
@@ -278,7 +370,6 @@
           <div class="badges">
             <div class="badge">✅ <b>Orçamento rápido</b> pelo WhatsApp</div>
             <div class="badge">📍 Atendemos <b>Sete Lagoas</b> e região</div>
-            <div class="badge">⚙️ Máquina <b>revisada</b></div>
           </div>
 
           <div class="hero-actions">
@@ -290,7 +381,15 @@
 
         <div class="card banner" aria-label="Banner do serviço">
           <img id="bannerImg" src="banner2.png" alt="Retroescavadeira Case 580M - Sete Lagoas e região" />
-         
+          <div class="overlay" aria-hidden="true"></div>
+
+          <div class="corner">
+            <div class="chip">🛠️ Serviço com operador</div>
+            <div class="chip">📍 <span id="chipCity">Sete Lagoas e região</span></div>
+            <div class="chip">💬 <span id="chipPhone">(31) 99586-1562</span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="servicos">
@@ -345,6 +444,11 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="shorts">
+      <h2 class="section-title">Serviços em vídeo (obras reais)</h2>
+      <div class="shorts-wrap" id="shortsWrap"></div>
     </section>
 
     <section id="diferenciais">
@@ -483,9 +587,15 @@
 
     // Textos
     document.getElementById("brandMachine").textContent = cfg.brand;
-document.getElementById("brandCity").textContent = cfg.city;
+    document.getElementById("brandCity").textContent = cfg.city;
     document.getElementById("heroTitle").textContent = `${cfg.machine} em ${cfg.city}`;
-    document.getElementById("chipPhone").textContent = cfg.phonePretty;
+
+    const chipCity = document.getElementById("chipCity");
+    if (chipCity) chipCity.textContent = cfg.city;
+
+    const chipPhone = document.getElementById("chipPhone");
+    if (chipPhone) chipPhone.textContent = cfg.phonePretty;
+
     document.getElementById("footMachine").textContent = cfg.machine;
     document.getElementById("footCity").textContent = cfg.city;
     document.getElementById("footPhone").textContent = cfg.phonePretty;
@@ -510,6 +620,121 @@ document.getElementById("brandCity").textContent = cfg.city;
       const el = document.getElementById(id);
       if(el) el.href = waLink;
     });
+
+    // ===== Shorts por serviço =====
+    const SHORTS_BY_SERVICE = [
+      {
+        title: "Demolição e limpeza do terreno",
+        desc: "Preparação do lote para nova construção no bairro Universitário.",
+        videos: [
+          { id: "cTclcnHgReA", label: "Parte 1" },
+          { id: "H-EeB5e6t4Q", label: "Parte 2" },
+        ]
+      },
+    ];
+
+    function ytEmbedUrl(id){
+  return `https://www.youtube-nocookie.com/embed/${id}?playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
+}
+
+
+    function renderShortsCarousel(){
+      const wrap = document.getElementById("shortsWrap");
+      if(!wrap) return;
+
+      wrap.innerHTML = "";
+
+      SHORTS_BY_SERVICE.forEach((service) => {
+        const hasArrows = service.videos.length > 1;
+
+        const card = document.createElement("div");
+        card.className = "card short-card";
+        card.dataset.videoIndex = "0";
+
+        const head = document.createElement("div");
+        head.className = "short-head";
+
+        const left = document.createElement("div");
+
+        const h = document.createElement("h3");
+        h.className = "short-title";
+        h.textContent = service.title;
+
+        const p = document.createElement("p");
+        p.className = "short-sub";
+        p.textContent = service.desc || "";
+
+        left.appendChild(h);
+        if(service.desc) left.appendChild(p);
+
+        head.appendChild(left);
+        card.appendChild(head);
+
+        const frame = document.createElement("div");
+        frame.className = "short-frame";
+
+        const iframe = document.createElement("iframe");
+        iframe.src = ytEmbedUrl(service.videos[0].id);
+        iframe.title = `${service.title} - ${service.videos[0].label || "Vídeo"}`;
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+
+        frame.appendChild(iframe);
+
+        const nav = document.createElement("div");
+        nav.className = "short-nav";
+
+        const btnPrev = document.createElement("button");
+        btnPrev.className = "short-btn prev" + (hasArrows ? "" : " short-hidden");
+        btnPrev.type = "button";
+        btnPrev.setAttribute("aria-label", "Vídeo anterior");
+        btnPrev.innerHTML = "&#8592;";
+
+        const btnNext = document.createElement("button");
+        btnNext.className = "short-btn next" + (hasArrows ? "" : " short-hidden");
+        btnNext.type = "button";
+        btnNext.setAttribute("aria-label", "Próximo vídeo");
+        btnNext.innerHTML = "&#8594;";
+
+        const counter = document.createElement("div");
+        counter.className = "short-counter" + (hasArrows ? "" : " short-hidden");
+        counter.textContent = hasArrows ? `1 / ${service.videos.length}` : "";
+
+        nav.appendChild(btnPrev);
+        nav.appendChild(btnNext);
+        nav.appendChild(counter);
+
+        frame.appendChild(nav);
+        card.appendChild(frame);
+
+        function setVideo(newIndex){
+          const total = service.videos.length;
+          const idx = (newIndex + total) % total;
+          card.dataset.videoIndex = String(idx);
+
+          iframe.src = ytEmbedUrl(service.videos[idx].id);
+          iframe.title = `${service.title} - ${service.videos[idx].label || `Vídeo ${idx+1}`}`;
+
+          if(hasArrows){
+            counter.textContent = `${idx + 1} / ${total}`;
+          }
+        }
+
+        btnPrev.addEventListener("click", () => {
+          const current = Number(card.dataset.videoIndex || "0");
+          setVideo(current - 1);
+        });
+
+        btnNext.addEventListener("click", () => {
+          const current = Number(card.dataset.videoIndex || "0");
+          setVideo(current + 1);
+        });
+
+        wrap.appendChild(card);
+      });
+    }
+
+    renderShortsCarousel();
   </script>
 </body>
 </html>
