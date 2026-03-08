@@ -544,10 +544,11 @@
     </section>
 
     <section id="maquinas">
-      <h2 class="section-title2">Sobre nossas máquinas</h2>
-      <p class="section-sub">
-        Escolha a máquina ideal para seu serviço. 
-      </p>
+  <h2 class="section-title2">Sobre nossas máquinas</h2>
+  <p class="section-sub">
+    Escolha a máquina ideal para seu serviço.
+  </p>
+</section>
 
      
 
@@ -815,11 +816,13 @@
     document.getElementById("floatPhone").textContent = cfg.phonePretty;
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.getElementById("heroBanner").src = cfg.heroBanner;
-    document.getElementById("caseCardImg").src = cfg.caseImage;
-    document.getElementById("caseSectionImg").src = cfg.caseImage;
-    document.getElementById("bobcatCardImg").src = cfg.bobcatImage;
-    document.getElementById("bobcatSectionImg").src = cfg.bobcatImage;
+    const heroBanner = document.getElementById("heroBanner");
+const caseSectionImg = document.getElementById("caseSectionImg");
+const bobcatSectionImg = document.getElementById("bobcatSectionImg");
+
+if (heroBanner) heroBanner.src = cfg.heroBanner;
+if (caseSectionImg) caseSectionImg.src = cfg.caseImage;
+if (bobcatSectionImg) bobcatSectionImg.src = cfg.bobcatImage;
 
     function buildWhatsAppLink(message){
       return `https://wa.me/${cfg.phone}?text=${encodeURIComponent(message)}`;
@@ -853,15 +856,23 @@
 
     // Shorts por serviço
     const SHORTS_BY_SERVICE = [
-      {
-        title: "Demolição e limpeza do terreno",
-        desc: "Preparação do lote para nova construção no bairro Universitário.",
-        videos: [
-          { id: "cTclcnHgReA", label: "Parte 1" },
-          { id: "H-EeB5e6t4Q", label: "Parte 2" }
-        ]
-      }
-    ];
+  {
+    title: "Retroescavadeira Case 580M",
+    desc: "Serviços executados com a retroescavadeira em obras reais.",
+    videos: [
+      { id: "GBy_iUxjRYo", label: "Vídeo 1" },
+      { id: "H-EeB5e6t4Q", label: "Vídeo 2" },
+      { id: "cTclcnHgReA", label: "Parte 3" }
+    ]
+  },
+  {
+    title: "Mini Carregadeira Bobcat S130",
+    desc: "Serviços executados com a Bobcat em campo.",
+    videos: [
+      { id: "GBy_iUxjRYo", label: "Vídeo 1" }
+    ]
+  }
+];
 
     function ytEmbedUrl(id){
       return `https://www.youtube-nocookie.com/embed/${id}?playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
